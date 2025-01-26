@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultados de Noticias</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
-    <header>
+    <link rel="stylesheet" href="/static/app.css" />
+    <link rel="stylesheet" href="/static/results.css" />
+  </head>
+  <body class="body-result">
+    <div class="head-result">
+      <header>
         <h1>Resultados para "{{ tema }}"</h1>
-        <a href="/">Volver</a>
-    </header>
-    <main>
+        <a class="link" href="/">Volver</a>
+      </header>
+    </div>
+    <div class="bg"></div>
+    <div class="notice">
+      <main class="notice-body">
         {% if error %}
-            <p>{{ error }}</p>
+        <p class="notice-title">{{ error }}</p>
         {% elif articles %}
-            <ul>
-                {% for article in articles %}
-                <li>
-                    <h2>{{ article.title }}</h2>
-                    <p><a href="{{ article.url }}" target="_blank">Leer más</a></p>
-                </li>
-                {% endfor %}
-            </ul>
+        <ul class="notice-list">
+          {% for article in articles %}
+          <li>
+            <h2 class="list-name">{{ article.title }}</h2>
+            <p>
+              <a class="link" href="{{ article.url }}" target="_blank"
+                >Más</a
+              >
+            </p>
+          </li>
+          {% endfor %}
+        </ul>
         {% else %}
-            <p>No se encontraron noticias para el tema "{{ tema }}".</p>
+        <p class="notice-not">
+          No se encontraron noticias para el tema "{{ tema }}".
+        </p>
         {% endif %}
-    </main>
-</body>
+      </main>
+    </div>
+    <footer class="foot">2024 | Josmary Pirela & Edward Villalobos</footer>
+  </body>
 </html>

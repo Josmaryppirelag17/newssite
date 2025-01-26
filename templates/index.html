@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscador de Noticias</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
-    <header>
-        <h1>Buscador de Noticias</h1>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body class="body">
+    <div class="bg"></div>
+    <header class="head">
+      <h1 class="title">Buscador de Noticias</h1>
+      <h2 class="subtitle">Tu fuente confiable de información actualizada, las 24 horas del día.</h2>
     </header>
     <main>
-<form action="/buscar" method="POST">
-    <label for="tema">Ingresa un tema de interés:</label>
-    <input type="text" id="tema" name="tema" required>
-    <button type="submit">Buscar</button>
-</form>
-
+      <div>
+        <img
+          class="img-deco"
+          src="../static/img/undraw_online-posts_avfn (1).svg"
+          alt=""
+        />
+      </div>
+      <div>
+        <form class="card" action="/buscar" method="POST">
+          <label for="tema">Ingresa un tema de interés:</label>
+          <input type="text" id="tema" name="tema" required />
+          <button alt="HOLA" type="submit">
+            <i>B</i>
+            <i>U</i>
+            <i>S</i>
+            <i>Q</i>
+            <i>U</i>
+            <i>E</i>
+            <i>D</i>
+            <i>A</i>
+          </button>
+        </form>
+      </div>
     </main>
-</body>
+      <footer class="foot">2024 | Josmary Pirela & Edward Villalobos</footer>
+  </body>
 </html>

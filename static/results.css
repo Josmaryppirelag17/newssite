@@ -1,0 +1,240 @@
+/* Importación de tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
+
+/* Paleta de colores */
+:root {
+  --primary-color: #4E35F2;
+  --secondary-color: #1D8FF2;
+  --background-color: #F2F2F2;
+  --light-gray: #A6A6A6;
+  --dark-gray: #595959;
+  --hover-light: #D9E6F5;
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+/* Encabezado */
+.head-result {
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* From Uiverse.io by absoluteSTrange */
+.link {
+  margin: ;
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: var(--secondary-color);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: var(--dark-gray);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.link:hover {
+  box-shadow: var(--dark-gray) 0px 7px 0px 0px;
+}
+
+.link:active {
+  background-color: var(--secondary-color);
+  /*50, 168, 80*/
+  box-shadow: var(--dark-gray) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+/* Cuerpo de los resultados */
+.notice-body {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: scaleUp 0.8s ease-in-out;
+}
+
+.notice-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.notice-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.notice-list li {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--hover-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.notice-list li:hover {
+  background-color: var(--light-gray);
+  transform: translateY(-5px);
+}
+
+.list-name {
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.notice-not {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--hover-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notice-not:hover {
+  background-color: var(--light-gray);
+}
+
+
+/* Pie de página */
+.foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--light-gray);
+  color: var(--background-color);
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .notice-body {
+    width: 80%;
+    padding: 3rem;
+  }
+
+  .notice-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .list-name {
+    font-size: 1.8rem;
+  }
+
+  .foot {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .notice-body {
+    padding: 1.5rem;
+  }
+
+  .list-name {
+    font-size: 1.2rem;
+  }
+
+  .foot {
+    font-size: 1rem;
+  }
+}
