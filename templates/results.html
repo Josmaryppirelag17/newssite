@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Noticias</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Resultados para "{{ tema }}"</h1>
+        <a href="/">Volver</a>
+    </header>
+    <main>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% elif articles %}
+            <ul>
+                {% for article in articles %}
+                <li>
+                    <h2>{{ article.title }}</h2>
+                    <p><a href="{{ article.url }}" target="_blank">Leer más</a></p>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron noticias para el tema "{{ tema }}".</p>
+        {% endif %}
+    </main>
+</body>
+</html>

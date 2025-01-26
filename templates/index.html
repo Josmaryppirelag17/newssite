@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Noticias</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Buscador de Noticias</h1>
+    </header>
+    <main>
+<form action="/buscar" method="POST">
+    <label for="tema">Ingresa un tema de interés:</label>
+    <input type="text" id="tema" name="tema" required>
+    <button type="submit">Buscar</button>
+</form>
+
+    </main>
+</body>
+</html>
